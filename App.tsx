@@ -1,12 +1,12 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Sparkles, MessageCircle, ArrowRight, RotateCcw } from 'lucide-react';
-import { WelcomeScreen } from './components/WelcomeScreen';
-import { StoryBoard } from './components/StoryBoard';
-import { ApologyGenerator } from './components/ApologyGenerator';
-import { FinalVerdict } from './components/FinalVerdict';
-import { SnapchatScreen } from './components/SnapchatScreen';
+import { Heart } from 'lucide-react';
+import { WelcomeScreen } from './components/WelcomeScreen.tsx';
+import { StoryBoard } from './components/StoryBoard.tsx';
+import { ApologyGenerator } from './components/ApologyGenerator.tsx';
+import { FinalVerdict } from './components/FinalVerdict.tsx';
+import { SnapchatScreen } from './components/SnapchatScreen.tsx';
 
 enum AppState {
   WELCOME = 'WELCOME',

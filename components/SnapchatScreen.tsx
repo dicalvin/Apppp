@@ -1,14 +1,17 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-// Added Heart to imports
-import { RotateCcw, Ghost, Heart } from 'lucide-react';
+import { RotateCcw, Ghost, Heart, Camera } from 'lucide-react';
 
 interface SnapchatScreenProps {
   onReset: () => void;
 }
 
 export const SnapchatScreen: React.FC<SnapchatScreenProps> = ({ onReset }) => {
+  const handleScreenshotReminder = () => {
+    alert("Don't forget to screenshot your meter and this message to send to Calvin! 📸💖");
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.8 }}
@@ -34,18 +37,27 @@ export const SnapchatScreen: React.FC<SnapchatScreenProps> = ({ onReset }) => {
         You still have to add him on Snapchat though 🥲
       </h2>
       
-      <p className="text-gray-500 mb-10 italic">
-        "Consider this the terms and conditions of forgiveness..."
+      <p className="text-gray-500 mb-8 italic">
+        "Consider this the terms and conditions of our new beginning..."
       </p>
 
-      <button
-        onClick={onReset}
-        className="w-full bg-pink-50 py-4 rounded-2xl text-pink-500 font-bold border-2 border-pink-200 hover:bg-pink-100 transition-all flex items-center justify-center gap-2"
-      >
-        <RotateCcw size={18} /> Take it from the top?
-      </button>
+      <div className="flex flex-col gap-3">
+        <button
+          onClick={handleScreenshotReminder}
+          className="w-full bg-pink-500 text-white py-4 rounded-2xl font-bold shadow-lg hover:bg-pink-600 transition-all flex items-center justify-center gap-2"
+        >
+          <Camera size={20} /> Screenshot & Send
+        </button>
 
-      <div className="mt-6 flex justify-center gap-1">
+        <button
+          onClick={onReset}
+          className="w-full bg-white py-4 rounded-2xl text-gray-400 font-medium border border-gray-100 hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+        >
+          <RotateCcw size={18} /> Start Over
+        </button>
+      </div>
+
+      <div className="mt-8 flex justify-center gap-1">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
