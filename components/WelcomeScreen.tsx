@@ -30,7 +30,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onNext }) => {
       <p className="text-gray-600 mb-8 leading-relaxed">
         This is a special message for <span className="font-semibold text-pink-500">Sheldine Namanya Beyunga</span>. 
         <br/><br/>
-        Calvin Diego Rwothomio has something he needs to say... and it's mostly about how Friday went down.
+        Calvin has something he needs to say... and it's mostly about how Friday went down.
       </p>
 
       <button
