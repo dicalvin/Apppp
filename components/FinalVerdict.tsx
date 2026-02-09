@@ -1,14 +1,14 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, MessageCircle, Stars, RotateCcw } from 'lucide-react';
+import { Heart, MessageCircle, Stars, ArrowRight } from 'lucide-react';
 
 interface FinalVerdictProps {
   forgivenessLevel: number;
-  onReset: () => void;
+  onNext: () => void;
 }
 
-export const FinalVerdict: React.FC<FinalVerdictProps> = ({ forgivenessLevel, onReset }) => {
+export const FinalVerdict: React.FC<FinalVerdictProps> = ({ forgivenessLevel, onNext }) => {
   const [verdict, setVerdict] = useState<'NONE' | 'FORGIVEN' | 'TALK'>('NONE');
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [noCount, setNoCount] = useState(0);
@@ -45,13 +45,13 @@ export const FinalVerdict: React.FC<FinalVerdictProps> = ({ forgivenessLevel, on
         </motion.div>
         <h2 className="text-4xl font-extrabold text-pink-600 mb-4">MERCY!</h2>
         <p className="text-gray-600 text-lg mb-8">
-          Thank you Sherry! You are the most patient person in the world. Calvin is officially out of the doghouse! 🏠🐕
+          Thank you Sherry! You are the most patient person in the world. Calvin would still like to meet you and settle it all!🥹
         </p>
         <button
-          onClick={onReset}
-          className="px-8 py-3 bg-pink-100 text-pink-600 rounded-xl font-bold hover:bg-pink-200 transition-colors flex items-center gap-2 mx-auto"
+          onClick={onNext}
+          className="px-8 py-4 bg-pink-500 text-white rounded-2xl font-bold hover:bg-pink-600 shadow-lg transition-all active:scale-95 flex items-center gap-2 mx-auto"
         >
-          <RotateCcw size={18} /> Replay
+          One last thing... <ArrowRight size={18} />
         </button>
       </motion.div>
     );
@@ -76,10 +76,10 @@ export const FinalVerdict: React.FC<FinalVerdictProps> = ({ forgivenessLevel, on
           Sherry has spoken! We need to talk it out properly. Calvin is ready to listen, explain, and make it better. 🗣️💖
         </p>
         <button
-          onClick={onReset}
-          className="px-8 py-3 bg-blue-50 text-blue-600 rounded-xl font-bold hover:bg-blue-100 transition-colors flex items-center gap-2 mx-auto"
+          onClick={onNext}
+          className="px-8 py-4 bg-blue-500 text-white rounded-2xl font-bold hover:bg-blue-600 shadow-lg transition-all active:scale-95 flex items-center gap-2 mx-auto"
         >
-          <RotateCcw size={18} /> Start Over
+          Wait, one more thing... <ArrowRight size={18} />
         </button>
       </motion.div>
     );

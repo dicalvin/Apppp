@@ -16,7 +16,7 @@ const slides = [
   {
     icon: <Frown className="text-pink-400" size={40} />,
     title: "My Bad!",
-    text: "I might have messed up the timing, the plan, or just the general energy. I admit it!"
+    text: "I might have messed up the timing, the plan, or just the general energy. I didn't give you a proper chance to speak and I might have done too much. I admit it!"
   },
   {
     icon: <AlertCircle className="text-pink-400" size={40} />,

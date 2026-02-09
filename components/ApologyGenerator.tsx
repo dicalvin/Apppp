@@ -57,7 +57,7 @@ export const ApologyGenerator: React.FC<ApologyGeneratorProps> = ({ onNext, onUp
           {sliderValue}% Forgiven
         </p>
         <p className="text-pink-400 text-sm mt-2 text-center italic">
-          "Slide to tell Calvin exactly how much he's in trouble"
+          "Slide to tell Calvin exactly how much he's been forgiven"
         </p>
       </div>
 

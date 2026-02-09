@@ -6,12 +6,14 @@ import { WelcomeScreen } from './components/WelcomeScreen';
 import { StoryBoard } from './components/StoryBoard';
 import { ApologyGenerator } from './components/ApologyGenerator';
 import { FinalVerdict } from './components/FinalVerdict';
+import { SnapchatScreen } from './components/SnapchatScreen';
 
 enum AppState {
   WELCOME = 'WELCOME',
   STORY = 'STORY',
   GENERATOR = 'GENERATOR',
-  VERDICT = 'VERDICT'
+  VERDICT = 'VERDICT',
+  SNAPCHAT = 'SNAPCHAT'
 }
 
 const App: React.FC = () => {
@@ -23,6 +25,7 @@ const App: React.FC = () => {
       case AppState.WELCOME: setStep(AppState.STORY); break;
       case AppState.STORY: setStep(AppState.GENERATOR); break;
       case AppState.GENERATOR: setStep(AppState.VERDICT); break;
+      case AppState.VERDICT: setStep(AppState.SNAPCHAT); break;
       default: break;
     }
   };
@@ -75,8 +78,11 @@ const App: React.FC = () => {
           <FinalVerdict 
             key="verdict" 
             forgivenessLevel={forgivenessLevel}
-            onReset={reset}
+            onNext={nextStep}
           />
+        )}
+        {step === AppState.SNAPCHAT && (
+          <SnapchatScreen key="snapchat" onReset={reset} />
         )}
       </AnimatePresence>
 
