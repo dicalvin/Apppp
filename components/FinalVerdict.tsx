@@ -116,7 +116,7 @@ export const FinalVerdict: React.FC<FinalVerdictProps> = ({ forgivenessLevel, on
         </motion.button>
         
         <p className="text-gray-400 text-xs italic max-w-[200px]">
-          {noCount === 0 && "Warning: The 'No' button is very stubborn."}
+          {noCount === 0 && "Warning: The 'No' button is very stubborn (a bit like 6-7 ⁶🤷⁷)."}
           {noCount > 0 && noCount < 3 && "Keep trying, or be nice!"}
           {noCount >= 3 && "Okay, okay! Compromise reached!"}
         </p>
